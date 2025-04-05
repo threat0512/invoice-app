@@ -49,8 +49,8 @@ A full-stack invoice management system that allows users to upload invoices and 
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/invoice-compliance-app.git
-cd invoice-compliance-app
+git clone https://github.com/your-username/invoice-app.git
+cd invoice-app
 
 # Install dependencies
 npm install
