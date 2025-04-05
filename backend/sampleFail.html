@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Validation Report</title>
+    <style>
+      .error {
+        border: 1px solid black;
+        padding: 5px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+	<body>
+		<h1>Results</h1>
+    <p>
+      The e-invoice has failed validation.<br>
+      The following rulesets were violated:<br>
+    </p>
+    <ul>
+      <li>Syntax Rules (<a href="https://github.com/A-NZ-PEPPOL/A-NZ-PEPPOL-BIS-3.0/tree/master/Specifications">EN16931 business rules (appendix B, BR rules, page 44)</a>)</li>
+      <li>PEPPOL Rules (<a href="https://github.com/A-NZ-PEPPOL/A-NZ-PEPPOL-BIS-3.0/tree/master/Specifications">AUNZ business rules (appendix B, PEPPOL rules, page 70)</a>)</li>
+    </ul>
+
+    <h2>Violations</h2>
+    <h3>Syntax Rules</h3>
+    <div class="error">
+      <p class="id">Id: PEPPOL...</p>
+      <p class="test">Test: ...</p>
+      <p class="description">Description: Did not do blah...</p>
+      <p class="severity">Severity: Fatal</p>
+    </div>
+
+    <div class="error">
+      <p class="id">Id: PEPPOL...</p>
+      <p class="test">Test: ...</p>
+      <p class="description">Description: Did not do other blah...</p>
+      <p class="severity">Severity: Fatal</p>
+    </div>
+
+    <h3>PEPPOL Rules</h3>
+    <div class="error">
+      <p class="id">Id: PEPPOL...</p>
+      <p class="test">Test: ...</p>
+      <p class="description">Description: Did not do other blah...</p>
+      <p class="severity">Severity: Fatal</p>
+    </div>
+
+    <h1>Your e-invoice:</h1>
+    <textarea rows="32" cols="128">
+$XMLDATA
+    </textarea>
+	</body>
+</html>

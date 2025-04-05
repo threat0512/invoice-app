@@ -1,0 +1,199 @@
+{
+  "_declaration": { "_attributes": { "version": "1.0", "encoding": "UTF-8" } },
+  "Invoice": {
+    "_attributes": {
+      "xmlns:cac": "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2",
+      "xmlns:cbc": "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2",
+      "xmlns": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+    },
+    "cbc:CustomizationID": {
+      "_text": "urn:cen.eu:en16931:2017#conformant#urn:fdc:peppol.eu:2017:poacc:billing:international:aunz:3.0"
+    },
+    "cbc:ProfileID": { "_text": "urn:fdc:peppol.eu:2017:poacc:billing:01:1.0" },
+    "cbc:ID": { "_text": "Invoice01" },
+    "cbc:IssueDate": { "_text": "2019-07-29" },
+    "cbc:DueDate": { "_text": "2019-08-30" },
+    "cbc:InvoiceTypeCode": { "_text": "380" },
+    "cbc:DocumentCurrencyCode": { "_text": "AUD" },
+    "cbc:BuyerReference": { "_text": "0150abc" },
+    "_comment": "OR ",
+    "cac:OrderReference": {
+      "cbc:ID": { "_text": "PurchaseOrderReference" },
+      "cbc:SalesOrderID": { "_text": "12345678" }
+    },
+
+    "cac:AccountingSupplierParty": {
+      "cac:Party": {
+        "cbc:EndpointID": {
+          "_attributes": { "schemeID": "0151" },
+          "_text": "47555222000"
+        },
+        "_comment": ["optional", "end"],
+        "cac:PartyName": {
+          "cbc:Name": { "_text": "Supplier Trading Name Ltd" }
+        },
+        "cac:PostalAddress": {
+          "_comment": ["optional", "end"],
+          "cbc:StreetName": { "_text": "Main street 1" },
+          "cbc:AdditionalStreetName": { "_text": "Postbox 123" },
+          "cbc:CityName": { "_text": "Harrison" },
+          "cbc:PostalZone": { "_text": "2912" },
+          "cac:Country": { "cbc:IdentificationCode": { "_text": "AU" } }
+        },
+        "cac:PartyLegalEntity": {
+          "cbc:RegistrationName": { "_text": "Supplier Official Name Ltd" },
+          "cbc:CompanyID": {
+            "_attributes": { "schemeID": "0151" },
+            "_text": "47555222000"
+          }
+        }
+      }
+    },
+
+    "cac:AccountingCustomerParty": {
+      "cac:Party": {
+        "cbc:EndpointID": {
+          "_attributes": { "schemeID": "0151" },
+          "_text": "91888222000"
+        },
+        "_comment": ["optional", "end"],
+        "cac:PartyName": { "cbc:Name": { "_text": "Trotters Trading Co Ltd" } },
+        "cac:PostalAddress": {
+          "_comment": ["optional", "end"],
+          "cbc:StreetName": { "_text": "100 Queen Street" },
+          "cbc:AdditionalStreetName": { "_text": "Po box 878" },
+          "cbc:CityName": { "_text": "Sydney" },
+          "cbc:PostalZone": { "_text": "2000" },
+          "cac:Country": { "cbc:IdentificationCode": { "_text": "AU" } }
+        },
+        "cac:PartyLegalEntity": {
+          "cbc:RegistrationName": { "_text": "Buyer Official Name" },
+          "cbc:CompanyID": {
+            "_attributes": { "schemeID": "0151" },
+            "_text": "91888222000"
+          }
+        }
+      }
+    },
+
+    "cac:TaxTotal": {
+      "cbc:TaxAmount": {
+        "_attributes": { "currencyID": "AUD" },
+        "_text": "148.74"
+      },
+      "cac:TaxSubtotal": {
+        "cbc:TaxableAmount": {
+          "_attributes": { "currencyID": "AUD" },
+          "_text": "1487.40"
+        },
+        "cbc:TaxAmount": {
+          "_attributes": { "currencyID": "AUD" },
+          "_text": "148.74"
+        },
+        "cac:TaxCategory": {
+          "cbc:ID": { "_text": "S" },
+          "cbc:Percent": { "_text": "10" },
+          "cac:TaxScheme": { "cbc:ID": { "_text": "GST" } }
+        }
+      }
+    },
+
+    "cac:LegalMonetaryTotal": {
+      "cbc:LineExtensionAmount": {
+        "_attributes": { "currencyID": "AUD" },
+        "_text": "1487.40"
+      },
+      "cbc:TaxExclusiveAmount": {
+        "_attributes": { "currencyID": "AUD" },
+        "_text": "1487.40"
+      },
+      "cbc:TaxInclusiveAmount": {
+        "_attributes": { "currencyID": "AUD" },
+        "_text": "1636.14"
+      },
+      "_comment": " <cbc:ChargeTotalAmount currencyID=\"AUD\">0.00</cbc:ChargeTotalAmount>\r\n        <cbc:PrepaidAmount currencyID=\"AUD\">0.00</cbc:PrepaidAmount> ",
+      "cbc:PayableAmount": {
+        "_attributes": { "currencyID": "AUD" },
+        "_text": "1636.14"
+      }
+    },
+    
+    "cac:InvoiceLine": [
+      {
+        "cbc:ID": { "_text": "1" },
+        "cbc:InvoicedQuantity": {
+          "_attributes": { "unitCode": "E99" },
+          "_text": "10"
+        },
+        "cbc:LineExtensionAmount": {
+          "_attributes": { "currencyID": "AUD" },
+          "_text": "299.90"
+        },
+        "cac:Item": {
+          "cbc:Name": { "_text": "True-Widgets" },
+          "cac:ClassifiedTaxCategory": {
+            "cbc:ID": { "_text": "S" },
+            "cbc:Percent": { "_text": "10" },
+            "cac:TaxScheme": { "cbc:ID": { "_text": "GST" } }
+          }
+        },
+        "cac:Price": {
+          "cbc:PriceAmount": {
+            "_attributes": { "currencyID": "AUD" },
+            "_text": "29.99"
+          }
+        }
+      },
+      {
+        "cbc:ID": { "_text": "2" },
+        "cbc:InvoicedQuantity": {
+          "_attributes": { "unitCode": "DAY" },
+          "_text": "2"
+        },
+        "cbc:LineExtensionAmount": {
+          "_attributes": { "currencyID": "AUD" },
+          "_text": "1000"
+        },
+        "cac:Item": {
+          "cbc:Name": { "_text": "item name 2" },
+          "cac:ClassifiedTaxCategory": {
+            "cbc:ID": { "_text": "S" },
+            "cbc:Percent": { "_text": "10" },
+            "cac:TaxScheme": { "cbc:ID": { "_text": "GST" } }
+          }
+        },
+        "cac:Price": {
+          "cbc:PriceAmount": {
+            "_attributes": { "currencyID": "AUD" },
+            "_text": "500"
+          }
+        }
+      },
+      {
+        "cbc:ID": { "_text": "3" },
+        "cbc:InvoicedQuantity": {
+          "_attributes": { "unitCode": "M66" },
+          "_text": "25"
+        },
+        "cbc:LineExtensionAmount": {
+          "_attributes": { "currencyID": "AUD" },
+          "_text": "187.50"
+        },
+        "cac:Item": {
+          "cbc:Name": { "_text": "True-Widgets" },
+          "cac:ClassifiedTaxCategory": {
+            "cbc:ID": { "_text": "S" },
+            "cbc:Percent": { "_text": "10" },
+            "cac:TaxScheme": { "cbc:ID": { "_text": "GST" } }
+          }
+        },
+        "cac:Price": {
+          "cbc:PriceAmount": {
+            "_attributes": { "currencyID": "AUD" },
+            "_text": "7.50"
+          }
+        }
+      }
+    ]
+  }
+}

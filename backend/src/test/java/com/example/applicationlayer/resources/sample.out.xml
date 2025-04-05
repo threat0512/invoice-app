@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <h2>Employee Information</h2>
+    <table border="1">
+      <tr bgcolor="#9acd32">
+        <th>Name</th>
+        <th>Position</th>
+        <th>Department</th>
+      </tr>
+      <tr>
+        <td>John Doe</td>
+        <td>Software Engineer</td>
+        <td>Engineering</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>HR Manager</td>
+        <td>Human Resources</td>
+      </tr>
+    </table>
+  </body>
+</html>

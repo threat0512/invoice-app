@@ -1,0 +1,39 @@
+{
+  "BuyerReference": "123456",
+  "InvoiceID": "01",
+  "IssueDate": "2020-10-02",
+  "DueDate": "2020-12-20",
+  "AccountingSupplierPartyPartyName": "seller name",
+  "AccountingSupplierPartyStreetName": "1",
+  "AccountingSupplierPartyAdditionalStreetName": "1",
+  "AccountingSupplierPartyCityName": "1",
+  "AccountingSupplierPartyPostalZone": "2033",
+  "AccountingSupplierPartyCountry": "NZ",
+  "AccountingSupplierPartyRegistrationName": "seller official name",
+  "AccountingSupplierPartyCompanyID": "9429040298443",
+  "AccountingCustomerPartyPartyName": "buyer name",
+  "AccountingCustomerPartyStreetName": "1",
+  "AccountingCustomerPartyAdditionalStreetName": "1",
+  "AccountingCustomerPartyCityName": "1",
+  "AccountingCustomerPartyPostalZone": "2033",
+  "AccountingCustomerPartyCountry": "AU",
+  "AccountingCustomerPartyRegistrationName": "buyer official name",
+  "AccountingCustomerPartyCompanyID": "47555222000",
+  "InvoiceLines": [
+    {
+      "ID": 1,
+      "UnitCode": "KGM",
+      "UnitPrice": "299.94",
+      "InvoicedQuantity": "10",
+      "ItemName": "item type 1"
+    },
+    {
+      "ID": 1,
+      "UnitCode": "KGM",
+      "UnitPrice": "111.11",
+      "InvoicedQuantity": "10",
+      "ItemName": "item type 2"
+    }
+  ],
+  "GSTPercent": 10
+}

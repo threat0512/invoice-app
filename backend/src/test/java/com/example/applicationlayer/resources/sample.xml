@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employees>
+  <employee>
+    <name>John Doe</name>
+    <position>Software Engineer</position>
+    <department>Engineering</department>
+  </employee>
+  <employee>
+    <name>Jane Smith</name>
+    <position>HR Manager</position>
+    <department>Human Resources</department>
+  </employee>
+</employees>

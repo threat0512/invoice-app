@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Validation Report</title>
+</head>
+
+<body>
+    <h1>Results</h1>
+    <p>
+        The e-invoice violates business rules<br></br>
+        The following was violated:
+    </p>
+    <ul>
+        <li>PEPPOL Rules (<a href="https://github.com/A-NZ-PEPPOL/A-NZ-PEPPOL-BIS-3.0/tree/master/Specifications">AUNZ
+                business rules (appendix B, PEPPOL rules, page 70)</a>)</li>
+        <li>Syntax Rules (<a
+                href="https://github.com/A-NZ-PEPPOL/A-NZ-PEPPOL-BIS-3.0/tree/master/Specifications">EN16931 business
+                rules (appendix B, BR rules, page 44)</a>)</li>
+    </ul>
+    <h2>Violations</h2>
+    <h3>from PEPPOL rules</h3>
+    <div class="error">
+        <p>Id: PEPPOL-EN16931-R020</p>
+        <p>Test: cbc:EndpointID</p>
+        <p>Description: Seller electronic address MUST be provided</p>
+        <p>Severity: fatal</p>
+    </div>
+    <div class="error">
+        <p>Id: PEPPOL-EN16931-R010</p>
+        <p>Test: cbc:EndpointID</p>
+        <p>Description: Buyer electronic address MUST be provided</p>
+        <p>Severity: fatal</p>
+    </div>
+    <div class="error">
+        <p>Id: AUNZ-R-004</p>
+        <p>Test: (string-length(cac:PartyLegalEntity/cbc:CompanyID)>=1 and cac:PartyLegalEntity/cbc:CompanyID/@schemeID
+            = '0151')</p>
+        <p>Description: [AUNZ-R-004]-An invoice must contain the Buyer's ABN if Buyer country is Australia</p>
+        <p>Severity: fatal</p>
+    </div>
+    <h3>from UBL</h3>
+    <div class="error">
+        <p>Id: UBL-CR-656</p>
+        <p>Test: not(cbc:InvoiceTypeCode/@listID)</p>
+        <p>Description: [UBL-CR-656]-A UBL invoice should not include the InvoiceTypeCode listID</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-CR-657</p>
+        <p>Test: not(cbc:DocumentCurrencyCode/@listID)</p>
+        <p>Description: [UBL-CR-657]-A UBL invoice should not include the DocumentCurrencyCode listID</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-CR-660</p>
+        <p>Test: not(//cac:Country/cbc:IdentificationCode/@listID)</p>
+        <p>Description: [UBL-CR-660]-A UBL invoice should not include the Country Identification code listID</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-CR-661</p>
+        <p>Test: not(cac:PaymentMeans/cbc:PaymentMeansCode/@listID)</p>
+        <p>Description: [UBL-CR-661]-A UBL invoice should not include the PaymentMeansCode listID</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-CR-663</p>
+        <p>Test: not(//@unitCodeListID)</p>
+        <p>Description: [UBL-CR-663]-A UBL invoice should not include the unitCodeListID</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-CR-678</p>
+        <p>Test: not(//cac:TaxCategory/cbc:ID/@schemeID)</p>
+        <p>Description: [UBL-CR-678]-A UBL invoice should not include the TaxCategory/ID schemeID</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-CR-679</p>
+        <p>Test: not(//cac:ClassifiedTaxCategory/cbc:ID/@schemeID)</p>
+        <p>Description: [UBL-CR-679]-A UBL invoice should not include the ClassifiedTaxCategory/ID schemeID</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-DT-27</p>
+        <p>Test: not(//@schemeAgencyID)</p>
+        <p>Description: [UBL-DT-27]-Scheme Agency ID attribute should not be present</p>
+        <p>Severity: warning</p>
+    </div>
+    <div class="error">
+        <p>Id: UBL-DT-28</p>
+        <p>Test: not(//@listAgencyID)</p>
+        <p>Description: [UBL-DT-28]-List Agency ID attribute should not be present</p>
+        <p>Severity: warning</p>
+    </div>
+    <h1>Your Invoice </h1>
+    <textarea rows="25" cols="150">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cec="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+   <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+   <cbc:CustomizationID>urn:cen.eu:en16931:2017#conformant#urn:fdc:peppol.eu:2017:poacc:billing:international:aunz:3.0</cbc:CustomizationID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</cbc:ProfileID>
+   <cbc:ID>EBWASP1002</cbc:ID>
+   <cbc:IssueDate>2022-02-07</cbc:IssueDate>
+   <cbc:InvoiceTypeCode listAgencyID="6" listID="UNCL1001">380</cbc:InvoiceTypeCode>
+   <cbc:DocumentCurrencyCode listAgencyID="6" listID="ISO4217">AUD</cbc:DocumentCurrencyCode>
+   <cbc:BuyerReference>EBWASP1002</cbc:BuyerReference>
+   <cac:AdditionalDocumentReference>
+      <cbc:ID>ebwasp1002</cbc:ID>
+   </cac:AdditionalDocumentReference>
+   <cac:AccountingSupplierParty>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeAgencyID="ZZZ" schemeID="0151">80647710156</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>Ebusiness Software Services Pty Ltd</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>100 Business St</cbc:StreetName>
+            <cbc:CityName>Dulwich Hill</cbc:CityName>
+            <cbc:PostalZone>2203</cbc:PostalZone>
+            <cac:Country>
+               <cbc:IdentificationCode listAgencyID="6" listID="ISO3166-1:Alpha2">AU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:PostalAddress>
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Ebusiness Software Services Pty Ltd</cbc:RegistrationName>
+            <cbc:CompanyID schemeAgencyID="ZZZ" schemeID="0151">80647710156</cbc:CompanyID>
+         </cac:PartyLegalEntity>
+      </cac:Party>
+   </cac:AccountingSupplierParty>
+   <cac:AccountingCustomerParty>
+      <cac:Party>
+         <cac:PartyName>
+            <cbc:Name>Awolako Enterprises Pty Ltd</cbc:Name>
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>Suite 123 Level 45</cbc:StreetName>
+            <cbc:AdditionalStreetName>999 The Crescent</cbc:AdditionalStreetName>
+            <cbc:CityName>Homebush West</cbc:CityName>
+            <cbc:PostalZone>2140</cbc:PostalZone>
+            <cac:Country>
+               <cbc:IdentificationCode listAgencyID="6" listID="ISO3166-1:Alpha2">AU</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:PostalAddress>
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Awolako Enterprises Pty Ltd</cbc:RegistrationName>
+         </cac:PartyLegalEntity>
+      </cac:Party>
+   </cac:AccountingCustomerParty>
+   <cac:PaymentMeans>
+      <cbc:PaymentMeansCode listAgencyID="6" listID="UNCL4461">1</cbc:PaymentMeansCode>
+      <cbc:PaymentID>EBWASP1002</cbc:PaymentID>
+   </cac:PaymentMeans>
+   <cac:PaymentTerms>
+      <cbc:Note>As agreed</cbc:Note>
+   </cac:PaymentTerms>
+   <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="AUD">10.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="AUD">100.00</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="AUD">10.00</cbc:TaxAmount>
+         <cac:TaxCategory>
+            <cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+            <cbc:Percent>10.0</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">GST</cbc:ID>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+   </cac:TaxTotal>
+   <cac:LegalMonetaryTotal>
+      <cbc:LineExtensionAmount currencyID="AUD">100.00</cbc:LineExtensionAmount>
+      <cbc:TaxExclusiveAmount currencyID="AUD">100.00</cbc:TaxExclusiveAmount>
+      <cbc:TaxInclusiveAmount currencyID="AUD">110.00</cbc:TaxInclusiveAmount>
+      <cbc:PayableRoundingAmount currencyID="AUD">0.00</cbc:PayableRoundingAmount>
+      <cbc:PayableAmount currencyID="AUD">110.00</cbc:PayableAmount>
+   </cac:LegalMonetaryTotal>
+   <cac:InvoiceLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:InvoicedQuantity unitCode="C62" unitCodeListID="UNECERec20">500.0</cbc:InvoicedQuantity>
+      <cbc:LineExtensionAmount currencyID="AUD">100.00</cbc:LineExtensionAmount>
+      <cac:Item>
+         <cbc:Name>pencils</cbc:Name>
+         <cac:ClassifiedTaxCategory>
+            <cbc:ID schemeAgencyID="6" schemeID="UNCL5305">S</cbc:ID>
+            <cbc:Percent>10.0</cbc:Percent>
+            <cac:TaxScheme>
+               <cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">GST</cbc:ID>
+            </cac:TaxScheme>
+         </cac:ClassifiedTaxCategory>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="AUD">0.20</cbc:PriceAmount>
+         <cbc:BaseQuantity unitCode="C62" unitCodeListID="UNECERec20">1.0</cbc:BaseQuantity>
+      </cac:Price>
+   </cac:InvoiceLine>
+</Invoice>    </textarea>
+</body>
+
+</html>
